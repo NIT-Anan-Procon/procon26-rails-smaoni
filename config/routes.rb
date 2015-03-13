@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
-
+#  get 'api/roomin/:id/:pass' => 'api#roomin'
+   get 'api/roomin/:num1/:num2/:num3' => 'api#roomin'
+   get 'api/cal/:num1/:num2/:num3' => 'api#cal'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
