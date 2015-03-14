@@ -1,7 +1,21 @@
 Rails.application.routes.draw do
+  get 'comment/index'
+
+  get 'opi/receiption'
+
+  get 'opi/onigokko'
+
+  post 'opi/post_comment'
+
+  devise_for :users
+  get 'home/index'
+
+  get 'home/show'
+
 #  get 'api/roomin/:id/:pass' => 'api#roomin'
    get 'api/roomin/:num1/:num2/:num3' => 'api#roomin'
    get 'api/cal/:num1/:num2/:num3' => 'api#cal'
+   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
