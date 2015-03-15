@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'comment/index'
+  get 'comments' => 'comment#index'
 
-  get 'opi/receiption'
+  post 'opi/receiption'
+  post 'opi/add_ai'
 
-  get 'opi/onigokko'
+  post 'opi/onigokko'
 
   post 'opi/post_comment'
 

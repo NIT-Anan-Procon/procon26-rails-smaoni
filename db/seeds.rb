@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+@score_data = Score.new
+@score_data.email = '1122320@st.anan-nct.ac.jp'
+@score_data.point = 100
+@score_data.scored_at = Time.now
+@score_data.save
+

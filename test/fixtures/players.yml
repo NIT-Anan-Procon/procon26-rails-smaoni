@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  x: 1
+  'y': 1
+  is_oni: false
+  is_invisible: false
+  invisible_end_at: 2015-03-15 00:11:09
+  score: 1
+  is_in_room: false
+
+two:
+  user_id: 
+  x: 1
+  'y': 1
+  is_oni: false
+  is_invisible: false
+  invisible_end_at: 2015-03-15 00:11:09
+  score: 1
+  is_in_room: false

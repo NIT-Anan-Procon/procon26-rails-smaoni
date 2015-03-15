@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  score: 1
+  scored_at: 2015-03-15 10:46:28
+
+two:
+  email: MyString
+  score: 1
+  scored_at: 2015-03-15 10:46:28
