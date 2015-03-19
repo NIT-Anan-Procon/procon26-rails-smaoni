@@ -12,3 +12,13 @@
 @score_data.scored_at = Time.now
 @score_data.save
 
+# Same as User.create(:email => '', :passeord => '')
+user = User.new(:email => 'yahoo_love@gmail.com', :password => 'kashifuku', :name => "かし")
+user.save!
+user = User.new(:email => 'hack_u_brilliant@st.anan-nct.ac.jp', :password => 'morikohki', :name => "もりりん")
+user.save!
+user = User.new(:email => 'happy_turn@yahoo.co.jp', :password => 'happyturn', :name => "ひらっぴ")
+user.save!
+user = User.new(:email => 'makko_kujira@docomo.ne.jp', :password => 'shironagasu', :name => 'GUCCI')
+user.save!
+

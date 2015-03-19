@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'comments' => 'comment#index'
-
   post 'opi/receiption'
+# post 'opi/receiption/:account/:password/:x/:y' => 'opi#receiption'
   post 'opi/add_ai'
-
+  post 'opi/quitall'
   post 'opi/onigokko'
 
   post 'opi/post_comment'
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'home/show'
+
+  get 'home/index/:id/' => 'home#index'
 
 #  get 'api/roomin/:id/:pass' => 'api#roomin'
    get 'api/roomin/:num1/:num2/:num3' => 'api#roomin'

@@ -2,13 +2,13 @@ class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
       t.references :user, index: true
-      t.integer :x
-      t.integer :y
-      t.boolean :is_oni
-      t.boolean :is_invisible
-      t.datetime :invisible_end_at
-      t.integer :score
-      t.boolean :is_in_room
+      t.integer :x, :default => 0
+      t.integer :y, :default => 0
+      t.boolean :is_oni, :default => false
+      t.boolean :is_invisible, :default => false
+      t.datetime :invisible_end
+      t.integer :score, :default => 0
+      t.boolean :is_in_room, :default => false
 
       t.timestamps null: false
     end

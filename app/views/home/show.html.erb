@@ -1,18 +1,23 @@
 <h1>Home#show</h1>
 <p>Find me in app/views/home/show.html.erb</p>
 <p>
-current_user.email = <%=current_user.email %><br>
 
 <%= link_to  "logout", destroy_user_session_path, method: :delete %>
     <% else %>
 </p>
 
 <body>
-<p>------------------<br>
-<% @scores.each{|s| %><br>
-  <%= s.email %><br>
-  <%= s.point %><br>
-  <%= s.scored_at %><br>
-<% } %>
---------------------</p>
+<% user = User.find_by_email(current_user.email) %>
+<% player = Player.find_by(:user_id => user.id) %>
+
+
+<%= user.name %> のスコアは
+<%= player.score %> です。
+
+<br>
+
+
+
+
+</p>
 </body>

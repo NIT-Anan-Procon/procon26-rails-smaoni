@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315015004) do
+ActiveRecord::Schema.define(version: 20150317084246) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,28 +22,27 @@ ActiveRecord::Schema.define(version: 20150315015004) do
 
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "players", force: :cascade do |t|
-    t.integer  "user_id"
+  create_table "members", force: :cascade do |t|
     t.integer  "x"
     t.integer  "y"
-    t.boolean  "is_oni"
-    t.boolean  "is_invisible"
-    t.datetime "invisible_end_at"
-    t.integer  "score"
-    t.boolean  "is_in_room"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "players", ["user_id"], name: "index_players_on_user_id"
-
-  create_table "scoredata", force: :cascade do |t|
-    t.string   "email"
-    t.integer  "score"
-    t.datetime "scored_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "x",             default: 0
+    t.integer  "y",             default: 0
+    t.boolean  "is_oni",        default: false
+    t.boolean  "is_invisible",  default: false
+    t.datetime "invisible_end"
+    t.integer  "score",         default: 0
+    t.boolean  "is_in_room",    default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "players", ["user_id"], name: "index_players_on_user_id"
 
   create_table "scores", force: :cascade do |t|
     t.string   "email"
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150315015004) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

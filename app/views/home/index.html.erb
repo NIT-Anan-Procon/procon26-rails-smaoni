@@ -1,2 +1,61 @@
-<h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+<h1>Users information</h1>
+
+<% @users.each do |u| %>
+<% p = Player.find_or_create_by(:user_id => u.id) %>
+<% user = User.find(p.user_id) %>
+<% uri = "/home/index/#{p.id}" %>
+<p>----------------------------<br>
+<%= user.name %><br>
+<%= user.email %><br>
+----------------------------<br>
+<form>
+
+<li>position x = <%= p.x %>
+<% 0.upto(7) {|x| %>
+<%= link_to x.to_s, "#{uri}?column=x&x=#{x}" %>
+<% } %>
+</li><br>
+<li>position y = <%= p.y %>
+<% 0.upto(7) {|y| %>
+<%= link_to y.to_s, "#{uri}?column=y&y=#{y}" %>
+<% } %>
+</li><br>
+<li>is_oni = <%= p.is_oni %>
+<%= link_to 'true', "#{uri}?column=is_oni&is_oni=true" %>
+<%= link_to 'false', "#{uri}?column=is_oni&is_oni=false" %>
+</li><br>
+<li>is_invisible = <%= p.is_invisible %>
+<%= link_to 'true', "#{uri}?column=is_invisible&is_invisible=true" %>
+<%= link_to 'false', "#{uri}?column=is_invisible&is_invisible=false" %>
+</li><br>
+<li>invisible_end = <%= p.invisible_end %>
+</li><br>
+<li>score = <%= p.score %>
+<% 0.upto(20) {|score| %>
+<%= link_to score.to_s, "#{uri}?column=score&score=#{score}" %>
+<% } %>
+</li><br>
+<li>is_in_room = <%= p.is_in_room %>
+<%= link_to 'true', "#{uri}?column=is_in_room&is_in_room=true" %>
+<%= link_to 'false', "#{uri}?column=is_in_room&is_in_room=false" %>
+</li><br>
+
+
+</form>
+
+</p>
+
+<% end %>
+
+
+
+<%= form_for :post do |f| %>
+<% end %>
+
+<% @members.each do |m| %>
+<%= m.x %><br>
+<%= m.y %>
+
+
+<% end %>

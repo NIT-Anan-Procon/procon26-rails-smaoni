@@ -15,8 +15,8 @@
       <%= link_to 'edit profile', edit_user_registration_path %> |
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "signin", new_user_registration_path %> |
-      <%= link_to "login", new_user_session_path %>
+      <%= link_to "sign_up", new_user_registration_path %> |
+      <%= link_to "log_in", new_user_session_path %>
     <% end %>
   </nav>
 </header>
